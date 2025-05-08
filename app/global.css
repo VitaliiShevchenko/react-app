@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Suisse Int\'l';
+    src: url('/fonts/SuisseIntl/Suisse_Intl_Regular.woff2') format('woff2'),
+    url('/fonts/SuisseIntl/Suisse_Intl_Regular.woff') format('woff');
+    font-weight: 400 450;
+    font-style: normal;
+    font-display: swap;
+
+}
+
+@font-face {
+    font-family: 'Suisse Int\'l';
+    src: url('/fonts/SuisseIntl/Suisse_Intl_Regular.woff2') format('woff2'),
+    url('/fonts/SuisseIntl/Suisse_Intl_Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

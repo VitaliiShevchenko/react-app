@@ -6,6 +6,10 @@ export default {
   theme: {
   	extend: {
   		fontFamily: {
+			suisse: [
+				"Suisse Int'l",
+				'sans-serif'
+			],
   			sans: [
   				'Inter',
   				'ui-sans-serif',
