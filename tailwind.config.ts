@@ -7,10 +7,11 @@ export default {
   	extend: {
   		fontFamily: {
 			suisse: [
-				"Suisse Int'l",
+				"SuisseIntl",
 				'sans-serif'
 			],
   			sans: [
+				'Open Sans',
   				'Inter',
   				'ui-sans-serif',
   				'system-ui',
