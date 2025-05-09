@@ -1,7 +1,8 @@
 export const Users = [
   {
     userId: "USR001",
-    name: "John Doe",
+    firstName: "John",
+    lastName: "Doe",
     address: "123 Main Street",
     country: "United States",
     email: "john.doe@example.com",
@@ -9,7 +10,8 @@ export const Users = [
   },
   {
     userId: "USR002",
-    name: "Jane Smith",
+    firstName: "Jane",
+    lastName: "Smith",
     address: "456 Park Avenue",
     country: "Canada",
     email: "jane.smith@example.com",
@@ -17,7 +19,8 @@ export const Users = [
   },
   {
     userId: "USR003",
-    name: "Alice Johnson",
+    firstName: "Alice",
+    lastName: "Johnson",
     address: "789 Oak Road",
     country: "United Kingdom",
     email: "alice.j@example.com",
