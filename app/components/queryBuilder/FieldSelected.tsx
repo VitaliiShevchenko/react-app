@@ -9,7 +9,7 @@ import { Button } from "~/components/ui/button";
 import { Table } from "~/types/queryBuilder";
 
 import {useState} from "react";
-import {DropDowmArrow} from "~/components/icons/DropDowmArrow";
+import {DropDownArrow} from "~/components/icons/DropDownArrow";
 import { getColumnIcon } from "~/utils/columnIcons";
 
 interface FieldSelectedProps {
@@ -36,18 +36,18 @@ export function FieldSelected({
     const SelectedIconComponent = getColumnIcon(selected)
 
     return (
-        <div className="p-4">
+        <div className="p-0 m-0 bg-fields">
             <DropdownMenu open={open} onOpenChange={setOpen}>
                 <DropdownMenuTrigger asChild>
                     <Button
                         variant="outline"
-                        className="bg-orange-100 text-orange-600 hover:bg-orange-200 px-3 py-1 text-sm font-medium rounded flex items-center gap-1"
+                        className="bg-fields hover:bg-orange-200 text-sm font-medium rounded-none flex items-center gap-1 p-0 border-none h-5 shadow-none"
                     >
-                        <span className="flex items-center gap-1 bg-orange-100 text-orange-600 px-2 py-1 rounded text-sm">
-                            <SelectedIconComponent className="w-4 h-4" />
+                        <span className="flex items-center gap-1 bg-fields color-accent-primary  rounded text-sm">
+                            <SelectedIconComponent />
                             {selected || "Select Field"}
                         </span>
-                        <DropDowmArrow/>
+                        <DropDownArrow/>
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-48">
