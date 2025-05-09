@@ -83,16 +83,16 @@ export const Tables = [
   {
     id : "TBL001",
     name: "Users",
-    fields: []
+    fields: ["userId", "firstName", "lastName", "address", "country", "email", "phoneNumber"]
   },
   {
     id : "TBL002",
     name: "Departments",
-    fields: []
+    fields: ["departmentCode", "departmentName", "location", "manager", "budget"]
   },
   {
     id : "TBL003",
     name: "Headers",
-    fields: []
+    fields: ["id", "title", "status", "createdBy", "createdDate", "priority"]
   }
 ];
