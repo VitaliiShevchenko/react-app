@@ -8,6 +8,7 @@ import {
     DropdownMenuItem
 } from "~/components/ui/dropdown-menu";
 import { Button } from "~/components/ui/button";
+import {DropDowmArrow} from "~/components/icons/DropDowmArrow";
 
 interface TableSelectorProps {
     tables: Table[];
@@ -34,18 +35,7 @@ export function TableSelector({ tables, onSelect }: TableSelectorProps) {
                                 <TableIcon className="w-4 h-4" />
                             {selected || "Select Table"}
                         </span>
-                        <svg
-                            className="ml-1 h-4 w-4 text-orange-500"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                        >
-                            <path
-                                fillRule="evenodd"
-                                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.08 1.04l-4.25 4.25a.75.75 0 01-1.08 0L5.25 8.27a.75.75 0 01-.02-1.06z"
-                                clipRule="evenodd"
-                            />
-                        </svg>
+                        <DropDowmArrow/>
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-48">
