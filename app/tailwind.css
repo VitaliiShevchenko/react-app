@@ -9,6 +9,70 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+
+  .tracking-thin {
+    letter-spacing: 0.2px;
+  }
+/* colors */
+  .color-accent-dark {
+    color: #0D0C22;
+  }
+
+  .color-accent-orange {
+    color: #F56B1E;
+  }
+
+  .color-accent-primary{
+    color: #0D99FF;
+  }
+
+  .color-stroke-primary {
+    color: #E4E7EC;
+  }
+
+  .color-text-tertiary {
+    color: #9BA2AC;
+  }
+
+  .color-text-secondary-tertiary {
+    color: #677281;
+  }
+
+  .color-text-dark {
+    color: #0D0C22;
+  }
+
+  .bg-header {
+    background: #CBDBE3;
+  }
+
+  .bg-primary {
+    background: #F9FAFB;
+  }
+
+  .bg-fields {
+    background: #F7F7F8;
+  }
+
+  .bg-select{
+    background: #D3DFE8;
+  }
+
+  .bg-cond {
+    background: #E7F5FF;
+  }
+
+  .bg-or-and {
+    background: #FFDF41;
+  }
+
+  .bg-join-area {
+    background: rgba(255, 255, 255, 0.50);
+  }
+
+  .bg-join-btn {
+    background: #FFDF41;
+  }
 }
 
 
@@ -81,19 +145,9 @@ body {
 }
 
 @font-face {
-  font-family: "Suisse Int'l";
-  src: url('/fonts/SuisseIntl/Suisse_Intl_Regular.woff2') format('woff2'),
-  url('/fonts/SuisseIntl/Suisse_Intl_Regular.woff') format('woff');
-  font-weight: 450;
-  font-style: normal;
-  font-display: swap;
-
-}
-
-@font-face {
-  font-family: "Suisse Int'l";
-  src: url('/fonts/SuisseIntl/Suisse_Intl_Regular.woff2') format('woff2'),
-  url('/fonts/SuisseIntl/Suisse_Intl_Regular.woff') format('woff');
+  font-family: 'SuisseIntl';
+  src: url('/fonts/SuisseIntl/SuisseIntl-Medium.woff2') format('woff2'),
+  url('/fonts/SuisseIntl/SuisseIntl-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
