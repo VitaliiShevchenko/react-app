@@ -1,3 +1,5 @@
+import {Table} from "~/types/queryBuilder";
+
 export const Users = [
   {
     userId: "USR001",
@@ -79,20 +81,50 @@ export const Headers = [
   }
 ];
 
-export const Tables = [
+export const Tables: Table[] = [
   {
-    id : "TBL001",
+    id: "TBL001",
     name: "Users",
-    fields: ["userId", "firstName", "lastName", "address", "country", "email", "phoneNumber"]
+    definition: {
+      columns: [
+        { name: "userId", type: "string", required: true },
+        { name: "firstName", type: "string", required: true },
+        { name: "lastName", type: "string", required: true },
+        { name: "address", type: "string" },
+        { name: "country", type: "string" },
+        { name: "email", type: "string", required: true },
+        { name: "phoneNumber", type: "string" }
+      ]
+    },
+    data: Users
   },
   {
-    id : "TBL002",
+    id: "TBL002",
     name: "Departments",
-    fields: ["departmentCode", "departmentName", "location", "manager", "budget"]
+    definition: {
+      columns: [
+        { name: "departmentCode", type: "string", required: true },
+        { name: "departmentName", type: "string", required: true },
+        { name: "location", type: "string" },
+        { name: "manager", type: "string", required: true },
+        { name: "budget", type: "number" }
+      ]
+    },
+    data: Departments
   },
   {
-    id : "TBL003",
+    id: "TBL003",
     name: "Headers",
-    fields: ["id", "title", "status", "createdBy", "createdDate", "priority"]
+    definition: {
+      columns: [
+        { name: "id", type: "string", required: true },
+        { name: "title", type: "string", required: true },
+        { name: "status", type: "string", required: true },
+        { name: "createdBy", type: "string", required: true },
+        { name: "createdDate", type: "date" },
+        { name: "priority", type: "string" }
+      ]
+    },
+    data: Headers
   }
 ];
