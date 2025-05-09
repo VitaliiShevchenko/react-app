@@ -1,5 +1,3 @@
-// app/mocks/mockData.ts
-
 export const Users = [
   {
     userId: "USR001",
@@ -75,5 +73,23 @@ export const Headers = [
     createdBy: "USR003",
     createdDate: "2024-03-10",
     priority: "Low"
+  }
+];
+
+export const Tables = [
+  {
+    id : "TBL001",
+    name: "Users",
+    fields: []
+  },
+  {
+    id : "TBL002",
+    name: "Departments",
+    fields: []
+  },
+  {
+    id : "TBL003",
+    name: "Headers",
+    fields: []
   }
 ];
