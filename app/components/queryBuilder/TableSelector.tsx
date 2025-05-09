@@ -8,7 +8,7 @@ import {
     DropdownMenuItem
 } from "~/components/ui/dropdown-menu";
 import { Button } from "~/components/ui/button";
-import {DropDowmArrow} from "~/components/icons/DropDowmArrow";
+import {DropDownArrow} from "~/components/icons/DropDownArrow";
 
 interface TableSelectorProps {
     tables: Table[];
@@ -24,18 +24,18 @@ export function TableSelector({ tables, onSelect }: TableSelectorProps) {
     };
 
     return (
-        <div className="p-4">
+        <div className="justify-items-start items-start p-0 h-5 bg-white">
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                     <Button
                         variant="outline"
-                        className="bg-orange-100 text-orange-600 hover:bg-orange-200 px-3 py-1 text-sm font-medium rounded flex items-center gap-1"
+                        className="bg-fields text-base font-medium flex items-center gap-1 border-0 p-0 h-5 rounded-none shadow-none"
                     >
-                        <span className="flex items-center gap-1 bg-orange-100 text-orange-600 px-2 py-1 rounded text-sm">
-                                <TableIcon className="w-4 h-4" />
+                        <span className="flex items-center gap-1 color-accent-orange bg-fields text-base h-5 rounded-none">
+                                <TableIcon className="" />
                             {selected || "Select Table"}
                         </span>
-                        <DropDowmArrow/>
+                        <DropDownArrow className="rounded-none" color="text-base"/>
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-48">
@@ -45,7 +45,7 @@ export function TableSelector({ tables, onSelect }: TableSelectorProps) {
                             onClick={() => handleSelect(table.name)}
                             className="cursor-pointer"
                         >
-                            <span className="flex items-center gap-1 bg-orange-100 text-orange-600 px-2 py-1 rounded text-sm">
+                            <span className="flex items-center gap-1 color-accent-orange bg-fields text-base h-5 rounded-none">
                                 <TableIcon className="w-4 h-4" />
                                 {table.name}
                             </span>
