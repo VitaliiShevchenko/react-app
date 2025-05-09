@@ -9,7 +9,7 @@ import { Button } from "~/components/ui/button";
 import { Table } from "~/types/queryBuilder";
 
 import {useState} from "react";
-import {DropDowmArrow} from "~/components/icons/DropDowmArrow";
+import {DropDownArrow} from "~/components/icons/DropDownArrow";
 import { getColumnIcon } from "~/utils/columnIcons";
 
 interface FieldSelectorProps {
@@ -34,21 +34,21 @@ export function FieldSelector({
     const SelectedIconComponent = getColumnIcon(selected)
 
     return (
-        <div className="p-4">
+        <div className="">
             <DropdownMenu open={open} onOpenChange={setOpen}>
                 <DropdownMenuTrigger asChild>
                     <Button
                         variant="outline"
-                        className="bg-orange-100 text-orange-600 hover:bg-orange-200 px-3 py-1 text-sm font-medium rounded flex items-center gap-1"
+                        className="flex bg-select hover:bg-gray hover:border-none px-3 py-3.5 text-sm font-medium rounded-lg border-none  items-center gap-1 h-12"
                     >
-                        <span className="flex items-center gap-1 bg-orange-100 text-orange-600 px-2 py-1 rounded text-sm">
+                        <span className="flex items-center gap-1 bg-select color-text-dark rounded text-sm  tracking-wider leading-4 ">
                             Select Field
                         </span>
-                        <DropDowmArrow/>
+                        <DropDownArrow/>
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-48">
-                    <DropdownMenuLabel className="text-orange-600">
+                    <DropdownMenuLabel className="color-text-tertiary text-xs leading-5 tracking-wider uppercase font-medium ">
                         {selectedTable.name} Fields
                     </DropdownMenuLabel>
                     {selectedTable?.definition.columns?.map((column) => {
