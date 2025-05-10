@@ -11,6 +11,7 @@ import { Table } from "~/types/queryBuilder";
 import {useState} from "react";
 import {DropDownArrow} from "~/components/icons/DropDownArrow";
 import { getColumnIcon } from "~/utils/columnIcons";
+import {camelCaseToHuman} from "~/utils/textTransformUtils";
 
 interface FieldSelectedProps {
     selectedTable: Table;
@@ -45,13 +46,13 @@ export function FieldSelected({
                     >
                         <span className="flex items-center gap-1 bg-fields color-accent-primary  rounded text-sm">
                             <SelectedIconComponent />
-                            {selected || "Select Field"}
+                            {camelCaseToHuman(selected) || "Select Field"}
                         </span>
                         <DropDownArrow/>
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-48">
-                    <DropdownMenuLabel className="text-orange-600">
+                    <DropdownMenuLabel className="color-text-tertiary text-xs leading-5 tracking-wider uppercase font-medium ">
                         {selectedTable.name} Fields
                     </DropdownMenuLabel>
                     {selectedTable?.definition.columns?.map((column) => {
@@ -62,9 +63,9 @@ export function FieldSelected({
                                 onSelect={() => handleSelect(column.name)}
                                 className="cursor-pointer"
                             >
-                                <span className="flex items-center gap-1 bg-orange-100 text-orange-600 px-2 py-1 rounded text-sm">
+                                <span className="flex items-center gap-1 bg-white color-accent-dark px-2 py-1 rounded text-sm">
                                     <IconComponent className="w-4 h-4" />
-                                    {column.name}
+                                    {camelCaseToHuman(column.name)}
                                 </span>
                             </DropdownMenuItem>
                         );
