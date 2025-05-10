@@ -20,7 +20,49 @@ export function useQueryBuilder() {
         conditionGroups: []
     });
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const queryService = new QueryBuilderService();
+
+    // Add this to your existing state if you need to track the loading state
+    const [isLoading, setIsLoading] = useState(false);
+
+    const updateSelectedTable = useCallback( (tableName: string) => {
+        try {
+            setIsLoading(true);
+
+            // Validate input
+            // if (!tableName) {
+            //     throw new Error('Table name is required');
+            // }
+
+            // Clear existing state when changing tables
+            setQueryState(prev => ({
+                ...prev,
+                selectedTable: tableName,
+                selectedFields: [], // Clear selected fields
+                joins: [], // Clear joins
+                conditionGroups: [], // Clear conditions
+                // Optionally preserve other state properties if needed
+            }));
+
+            // You might want to fetch table schema/metadata here
+            // const tableSchema = await fetchTableSchema(tableName);
+
+            // Optionally update available fields based on the selected table
+            // setAvailableFields(tableSchema.fields);
+
+            return tableName;
+        } catch (error) {
+            // Handle specific error types
+            if (error instanceof Error) {
+                throw new Error(`Failed to update selected table: ${error.message}`);
+            }
+            throw new Error('Failed to update selected table');
+        } finally {
+            setIsLoading(false);
+        }
+    }, []);
+
 
     // Field Management Methods
     const addField = useCallback((field: Field) => {
@@ -185,16 +227,20 @@ export function useQueryBuilder() {
                 joins: [...prev.joins, join]
             }));
         }
-    }, []);
+    }, [queryService]);
 
     // Generate SQL
     const generateSQL = useCallback(() => {
         return queryService.generateSQL(queryState);
-    }, [queryState]);
+    }, [queryService, queryState]);
 
     return {
         // State
         queryState,
+        isLoading,
+
+        //Table Methods
+        updateSelectedTable,
 
         // Field Methods
         addField,
