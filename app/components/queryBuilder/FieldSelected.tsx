@@ -42,7 +42,7 @@ export function FieldSelected({
                 <DropdownMenuTrigger asChild>
                     <Button
                         variant="outline"
-                        className="bg-fields hover:bg-orange-200 text-sm font-medium rounded-none flex items-center gap-1 p-0 border-none h-5 shadow-none"
+                        className="bg-fields focus-visible:shadow-none text-sm font-medium rounded-none flex items-center gap-1 p-0 border-none h-5 shadow-none"
                     >
                         <span className="flex items-center gap-1 bg-fields color-accent-primary  rounded text-sm">
                             <SelectedIconComponent />
