@@ -35,7 +35,7 @@ export function useQueryBuilder() {
             //     throw new Error('Table name is required');
             // }
 
-            // Clear existing state when changing tables
+            // Clear the existing state when changing tables
             setQueryState(prev => ({
                 ...prev,
                 selectedTable: tableName,
@@ -65,23 +65,23 @@ export function useQueryBuilder() {
 
 
     // Field Management Methods
-    const addField = useCallback((field: Field) => {
+    const addField = useCallback((field: string) => {
         setQueryState(prev => ({
             ...prev,
             selectedFields: [...prev.selectedFields, field]
         }));
     }, []);
 
-    const removeField = useCallback((fieldToRemove: Field) => {
+    const removeField = useCallback((fieldToRemove: string) => {
         setQueryState(prev => ({
             ...prev,
             selectedFields: prev.selectedFields.filter(
-                field => !(field.name === fieldToRemove.name && field.table === fieldToRemove.table)
+                field => !(field === fieldToRemove)
             )
         }));
     }, []);
 
-    const updateFields = useCallback((fields: Field[]) => {
+    const updateFields = useCallback((fields: string[]) => {
         setQueryState(prev => ({
             ...prev,
             selectedFields: fields

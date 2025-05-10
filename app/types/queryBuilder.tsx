@@ -63,7 +63,7 @@ export interface ConditionGroup {
 
 export interface QueryState {
   selectedTable: string;
-  selectedFields: Field[];
+  selectedFields: string[];
   joins: Join[];
   conditionGroups: ConditionGroup[];
 }
